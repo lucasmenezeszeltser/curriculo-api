@@ -1,13 +1,13 @@
 {
   "info": {
-    "name": "Curriculo API - PRODUÇÃO",
-    "description": "API REST para gerenciamento de currículos - URL REAL",
+    "name": "Curriculo API Profissionais - PRODUÇÃO",
+    "description": "API REST para gerenciamento de currículos profissionais - Nova Modelagem",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://curriculum-api-back-end.vercel.app",
+      "value": "https://curriculo-api-mu.vercel.app",
       "type": "string"
     }
   ],
@@ -30,34 +30,34 @@
       ]
     },
     {
-      "name": "👥 PESSOAS - CRUD COMPLETO",
+      "name": "👥 PROFISSIONAIS - CRUD COMPLETO",
       "item": [
         {
-          "name": "📋 LISTAR todas as pessoas",
+          "name": "📋 LISTAR todos os profissionais",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/pessoas",
+              "raw": "{{baseUrl}}/api/profissionais",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "pessoas"]
+              "path": ["api", "profissionais"]
             }
           }
         },
         {
-          "name": "🔍 BUSCAR pessoa por ID",
+          "name": "🔍 BUSCAR profissional por ID",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/pessoas/1",
+              "raw": "{{baseUrl}}/api/profissionais/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "pessoas", "1"]
+              "path": ["api", "profissionais", "1"]
             }
           }
         },
         {
-          "name": "➕ CRIAR nova pessoa",
+          "name": "➕ CRIAR novo profissional",
           "request": {
             "method": "POST",
             "header": [
@@ -68,17 +68,17 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nome\": \"Carlos Oliveira\",\n  \"email\": \"carlos.oliveira@email.com\",\n  \"telefone\": \"(31) 77777-7777\",\n  \"endereco\": \"Belo Horizonte, MG\",\n  \"resumo\": \"Desenvolvedor Mobile com experiência em React Native\"\n}"
+              "raw": "{\n  \"nome_completo\": \"Fernanda Lima\",\n  \"email\": \"fernanda.lima@dev.com\",\n  \"telefone\": \"(31) 98888-9999\",\n  \"cargo_atual\": \"Desenvolvedora Frontend Pleno\",\n  \"nivel_experiencia\": \"Pleno\",\n  \"localizacao\": \"Belo Horizonte, MG\",\n  \"linkedin_url\": \"https://linkedin.com/in/fernandalima\",\n  \"github_url\": \"https://github.com/fernandalima\",\n  \"salario_pretendido\": 6500.00,\n  \"disponivel_contratacao\": true,\n  \"resumo_profissional\": \"Desenvolvedora Frontend com 3 anos de experiência em React, Vue.js e TypeScript. Especializada em interfaces modernas e responsivas.\"\n}"
             },
             "url": {
-              "raw": "{{baseUrl}}/api/pessoas",
+              "raw": "{{baseUrl}}/api/profissionais",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "pessoas"]
+              "path": ["api", "profissionais"]
             }
           }
         },
         {
-          "name": "✏️ ATUALIZAR pessoa",
+          "name": "✏️ ATUALIZAR profissional",
           "request": {
             "method": "PUT",
             "header": [
@@ -89,24 +89,24 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"email\": \"joao.silva@email.com\",\n  \"telefone\": \"(11) 99999-9999\",\n  \"endereco\": \"São Paulo, SP - Atualizado\",\n  \"resumo\": \"Desenvolvedor Full Stack com 6 anos de experiência\"\n}"
+              "raw": "{\n  \"nome_completo\": \"Ricardo Silva Atualizado\",\n  \"email\": \"ricardo.silva@dev.com\",\n  \"telefone\": \"(11) 97777-8888\",\n  \"cargo_atual\": \"Desenvolvedor Backend Sênior\",\n  \"nivel_experiencia\": \"Sênior\",\n  \"localizacao\": \"São Paulo, SP\",\n  \"linkedin_url\": \"https://linkedin.com/in/ricardosilva\",\n  \"github_url\": \"https://github.com/ricardosilva\",\n  \"salario_pretendido\": 9500.00,\n  \"disponivel_contratacao\": true,\n  \"resumo_profissional\": \"Desenvolvedor Backend com 5 anos de experiência atualizada em Node.js, Python e arquitetura de microserviços.\"\n}"
             },
             "url": {
-              "raw": "{{baseUrl}}/api/pessoas/1",
+              "raw": "{{baseUrl}}/api/profissionais/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "pessoas", "1"]
+              "path": ["api", "profissionais", "1"]
             }
           }
         },
         {
-          "name": "🗑️ DELETAR pessoa",
+          "name": "🗑️ DELETAR profissional",
           "request": {
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/pessoas/3",
+              "raw": "{{baseUrl}}/api/profissionais/3",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "pessoas", "3"]
+              "path": ["api", "profissionais", "3"]
             }
           }
         }
@@ -128,14 +128,14 @@
           }
         },
         {
-          "name": "🔍 BUSCAR experiências por pessoa",
+          "name": "🔍 BUSCAR experiências por profissional",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/experiencias/pessoa/1",
+              "raw": "{{baseUrl}}/api/experiencias/profissional/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "experiencias", "pessoa", "1"]
+              "path": ["api", "experiencias", "profissional", "1"]
             }
           }
         },
@@ -151,7 +151,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"pessoa_id\": 1,\n  \"empresa\": \"Nova Empresa Tech\",\n  \"cargo\": \"Desenvolvedor Sênior\",\n  \"periodo\": \"2023 - Presente\",\n  \"descricao\": \"Liderança de equipe de desenvolvimento\"\n}"
+              "raw": "{\n  \"profissional_id\": 1,\n  \"empresa\": \"Nova Tech Solutions\",\n  \"cargo\": \"Desenvolvedor Backend Sênior\",\n  \"data_inicio\": \"2023-01-15\",\n  \"data_fim\": null,\n  \"atual\": true,\n  \"descricao\": \"Liderança de equipe de desenvolvimento backend. Arquitetura de microserviços.\",\n  \"tecnologias\": [\"Node.js\", \"PostgreSQL\", \"Docker\", \"AWS\", \"Redis\"]\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/experiencias",
@@ -172,7 +172,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"empresa\": \"Tech Solutions Ltda Atualizada\",\n  \"cargo\": \"Desenvolvedor Full Stack Pleno\",\n  \"periodo\": \"2020 - 2024\",\n  \"descricao\": \"Desenvolvimento full stack atualizado\"\n}"
+              "raw": "{\n  \"empresa\": \"Tech Solutions SA Atualizada\",\n  \"cargo\": \"Desenvolvedor Backend Pleno\",\n  \"data_inicio\": \"2022-03-01\",\n  \"data_fim\": null,\n  \"atual\": true,\n  \"descricao\": \"Desenvolvimento e manutenção de APIs REST para sistema de e-commerce atualizado.\",\n  \"tecnologias\": [\"Node.js\", \"Express\", \"PostgreSQL\", \"Redis\", \"Docker\", \"AWS\", \"TypeScript\"]\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/experiencias/1",
@@ -196,34 +196,34 @@
       ]
     },
     {
-      "name": "🎓 EDUCAÇÃO - CRUD COMPLETO",
+      "name": "🎓 FORMAÇÃO - CRUD COMPLETO",
       "item": [
         {
-          "name": "📋 LISTAR toda a educação",
+          "name": "📋 LISTAR toda a formação",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/educacao",
+              "raw": "{{baseUrl}}/api/formacao",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "educacao"]
+              "path": ["api", "formacao"]
             }
           }
         },
         {
-          "name": "🔍 BUSCAR educação por pessoa",
+          "name": "🔍 BUSCAR formação por profissional",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/educacao/pessoa/2",
+              "raw": "{{baseUrl}}/api/formacao/profissional/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "educacao", "pessoa", "2"]
+              "path": ["api", "formacao", "profissional", "1"]
             }
           }
         },
         {
-          "name": "➕ CRIAR nova educação",
+          "name": "➕ CRIAR nova formação",
           "request": {
             "method": "POST",
             "header": [
@@ -234,17 +234,17 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"pessoa_id\": 2,\n  \"instituicao\": \"Universidade de Data Science\",\n  \"curso\": \"Pós-graduação em Big Data\",\n  \"periodo\": \"2022 - 2023\",\n  \"descricao\": \"Especialização em análise de grandes volumes de dados\"\n}"
+              "raw": "{\n  \"profissional_id\": 1,\n  \"instituicao\": \"Universidade de Tecnologia\",\n  \"curso\": \"Pós-graduação em Arquitetura de Software\",\n  \"nivel\": \"Pós-Graduação\",\n  \"data_inicio\": \"2022-08-01\",\n  \"data_conclusao\": \"2023-12-15\",\n  \"concluido\": true\n}"
             },
             "url": {
-              "raw": "{{baseUrl}}/api/educacao",
+              "raw": "{{baseUrl}}/api/formacao",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "educacao"]
+              "path": ["api", "formacao"]
             }
           }
         },
         {
-          "name": "✏️ ATUALIZAR educação",
+          "name": "✏️ ATUALIZAR formação",
           "request": {
             "method": "PUT",
             "header": [
@@ -255,24 +255,24 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"instituicao\": \"Faculdade de Estatística Atualizada\",\n  \"curso\": \"Bacharelado em Estatística e Data Science\",\n  \"periodo\": \"2013 - 2018\",\n  \"descricao\": \"Formação atualizada com foco em data science\"\n}"
+              "raw": "{\n  \"instituicao\": \"Universidade de São Paulo Atualizada\",\n  \"curso\": \"Ciência da Computação\",\n  \"nivel\": \"Graduação\",\n  \"data_inicio\": \"2016-01-01\",\n  \"data_conclusao\": \"2019-12-15\",\n  \"concluido\": true\n}"
             },
             "url": {
-              "raw": "{{baseUrl}}/api/educacao/3",
+              "raw": "{{baseUrl}}/api/formacao/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "educacao", "3"]
+              "path": ["api", "formacao", "1"]
             }
           }
         },
         {
-          "name": "🗑️ DELETAR educação",
+          "name": "🗑️ DELETAR formação",
           "request": {
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/educacao/6",
+              "raw": "{{baseUrl}}/api/formacao/6",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "educacao", "6"]
+              "path": ["api", "formacao", "6"]
             }
           }
         }
@@ -294,14 +294,14 @@
           }
         },
         {
-          "name": "🔍 BUSCAR habilidades por pessoa",
+          "name": "🔍 BUSCAR habilidades por profissional",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/habilidades/pessoa/1",
+              "raw": "{{baseUrl}}/api/habilidades/profissional/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "habilidades", "pessoa", "1"]
+              "path": ["api", "habilidades", "profissional", "1"]
             }
           }
         },
@@ -317,7 +317,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"pessoa_id\": 1,\n  \"habilidade\": \"TypeScript\",\n  \"nivel\": \"Intermediário\"\n}"
+              "raw": "{\n  \"profissional_id\": 1,\n  \"tecnologia\": \"TypeScript\",\n  \"categoria\": \"Linguagem\",\n  \"nivel_proficiencia\": 4,\n  \"anos_experiencia\": 2.5,\n  \"destaque\": true\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/habilidades",
@@ -338,7 +338,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"habilidade\": \"JavaScript ES6+\",\n  \"nivel\": \"Especialista\"\n}"
+              "raw": "{\n  \"tecnologia\": \"Node.js\",\n  \"categoria\": \"Backend\",\n  \"nivel_proficiencia\": 5,\n  \"anos_experiencia\": 4.0,\n  \"destaque\": true\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/habilidades/1",
@@ -362,53 +362,136 @@
       ]
     },
     {
-      "name": "🔗 TESTES DE RELACIONAMENTOS",
+      "name": "🌐 IDIOMAS - CRUD COMPLETO",
       "item": [
         {
-          "name": "🔗 Dados completos da Pessoa 1 com relacionamentos",
+          "name": "📋 LISTAR todos os idiomas",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/pessoas/1",
+              "raw": "{{baseUrl}}/api/idiomas",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "pessoas", "1"]
+              "path": ["api", "idiomas"]
             }
           }
         },
         {
-          "name": "🔗 Experiências da Pessoa 1",
+          "name": "🔍 BUSCAR idiomas por profissional",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/experiencias/pessoa/1",
+              "raw": "{{baseUrl}}/api/idiomas/profissional/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "experiencias", "pessoa", "1"]
+              "path": ["api", "idiomas", "profissional", "1"]
             }
           }
         },
         {
-          "name": "🔗 Educação da Pessoa 2",
+          "name": "➕ CRIAR novo idioma",
           "request": {
-            "method": "GET",
-            "header": [],
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"profissional_id\": 1,\n  \"idioma\": \"Alemão\",\n  \"nivel\": \"Básico\"\n}"
+            },
             "url": {
-              "raw": "{{baseUrl}}/api/educacao/pessoa/2",
+              "raw": "{{baseUrl}}/api/idiomas",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "educacao", "pessoa", "2"]
+              "path": ["api", "idiomas"]
             }
           }
         },
         {
-          "name": "🔗 Habilidades da Pessoa 2",
+          "name": "✏️ ATUALIZAR idioma",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idioma\": \"Inglês\",\n  \"nivel\": \"Fluente\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/idiomas/2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "idiomas", "2"]
+            }
+          }
+        },
+        {
+          "name": "🗑️ DELETAR idioma",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/idiomas/6",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "idiomas", "6"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎯 ROTAS ESPECIAIS",
+      "item": [
+        {
+          "name": "📄 CURRÍCULO COMPLETO do profissional",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/habilidades/pessoa/2",
+              "raw": "{{baseUrl}}/api/curriculo/1",
               "host": ["{{baseUrl}}"],
-              "path": ["api", "habilidades", "pessoa", "2"]
+              "path": ["api", "curriculo", "1"]
+            }
+          }
+        },
+        {
+          "name": "✅ PROFISSIONAIS DISPONÍVEIS para contratação",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/profissionais/disponiveis",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "profissionais", "disponiveis"]
+            }
+          }
+        },
+        {
+          "name": "📊 PROFISSIONAIS por NÍVEL (Júnior/Pleno/Sênior)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/profissionais/nivel/Pleno",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "profissionais", "nivel", "Pleno"]
+            }
+          }
+        },
+        {
+          "name": "🔧 HABILIDADES por CATEGORIA",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/habilidades/categoria/Backend",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "habilidades", "categoria", "Backend"]
             }
           }
         }
