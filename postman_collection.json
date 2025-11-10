@@ -1,0 +1,418 @@
+{
+  "info": {
+    "name": "Curriculo API - PRODUÇÃO",
+    "description": "API REST para gerenciamento de currículos - URL REAL",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://curriculum-api-back-end.vercel.app",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "📊 TESTE INICIAL",
+      "item": [
+        {
+          "name": "Health Check - API Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": ["{{baseUrl}}"],
+              "path": [""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "👥 PESSOAS - CRUD COMPLETO",
+      "item": [
+        {
+          "name": "📋 LISTAR todas as pessoas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/pessoas",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pessoas"]
+            }
+          }
+        },
+        {
+          "name": "🔍 BUSCAR pessoa por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/pessoas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pessoas", "1"]
+            }
+          }
+        },
+        {
+          "name": "➕ CRIAR nova pessoa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Carlos Oliveira\",\n  \"email\": \"carlos.oliveira@email.com\",\n  \"telefone\": \"(31) 77777-7777\",\n  \"endereco\": \"Belo Horizonte, MG\",\n  \"resumo\": \"Desenvolvedor Mobile com experiência em React Native\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/pessoas",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pessoas"]
+            }
+          }
+        },
+        {
+          "name": "✏️ ATUALIZAR pessoa",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"email\": \"joao.silva@email.com\",\n  \"telefone\": \"(11) 99999-9999\",\n  \"endereco\": \"São Paulo, SP - Atualizado\",\n  \"resumo\": \"Desenvolvedor Full Stack com 6 anos de experiência\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/pessoas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pessoas", "1"]
+            }
+          }
+        },
+        {
+          "name": "🗑️ DELETAR pessoa",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/pessoas/3",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pessoas", "3"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "💼 EXPERIÊNCIAS - CRUD COMPLETO",
+      "item": [
+        {
+          "name": "📋 LISTAR todas as experiências",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/experiencias",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "experiencias"]
+            }
+          }
+        },
+        {
+          "name": "🔍 BUSCAR experiências por pessoa",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/experiencias/pessoa/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "experiencias", "pessoa", "1"]
+            }
+          }
+        },
+        {
+          "name": "➕ CRIAR nova experiência",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pessoa_id\": 1,\n  \"empresa\": \"Nova Empresa Tech\",\n  \"cargo\": \"Desenvolvedor Sênior\",\n  \"periodo\": \"2023 - Presente\",\n  \"descricao\": \"Liderança de equipe de desenvolvimento\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/experiencias",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "experiencias"]
+            }
+          }
+        },
+        {
+          "name": "✏️ ATUALIZAR experiência",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"empresa\": \"Tech Solutions Ltda Atualizada\",\n  \"cargo\": \"Desenvolvedor Full Stack Pleno\",\n  \"periodo\": \"2020 - 2024\",\n  \"descricao\": \"Desenvolvimento full stack atualizado\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/experiencias/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "experiencias", "1"]
+            }
+          }
+        },
+        {
+          "name": "🗑️ DELETAR experiência",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/experiencias/5",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "experiencias", "5"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎓 EDUCAÇÃO - CRUD COMPLETO",
+      "item": [
+        {
+          "name": "📋 LISTAR toda a educação",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/educacao",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "educacao"]
+            }
+          }
+        },
+        {
+          "name": "🔍 BUSCAR educação por pessoa",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/educacao/pessoa/2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "educacao", "pessoa", "2"]
+            }
+          }
+        },
+        {
+          "name": "➕ CRIAR nova educação",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pessoa_id\": 2,\n  \"instituicao\": \"Universidade de Data Science\",\n  \"curso\": \"Pós-graduação em Big Data\",\n  \"periodo\": \"2022 - 2023\",\n  \"descricao\": \"Especialização em análise de grandes volumes de dados\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/educacao",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "educacao"]
+            }
+          }
+        },
+        {
+          "name": "✏️ ATUALIZAR educação",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instituicao\": \"Faculdade de Estatística Atualizada\",\n  \"curso\": \"Bacharelado em Estatística e Data Science\",\n  \"periodo\": \"2013 - 2018\",\n  \"descricao\": \"Formação atualizada com foco em data science\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/educacao/3",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "educacao", "3"]
+            }
+          }
+        },
+        {
+          "name": "🗑️ DELETAR educação",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/educacao/6",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "educacao", "6"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🛠️ HABILIDADES - CRUD COMPLETO",
+      "item": [
+        {
+          "name": "📋 LISTAR todas as habilidades",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/habilidades",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "habilidades"]
+            }
+          }
+        },
+        {
+          "name": "🔍 BUSCAR habilidades por pessoa",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/habilidades/pessoa/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "habilidades", "pessoa", "1"]
+            }
+          }
+        },
+        {
+          "name": "➕ CRIAR nova habilidade",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pessoa_id\": 1,\n  \"habilidade\": \"TypeScript\",\n  \"nivel\": \"Intermediário\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/habilidades",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "habilidades"]
+            }
+          }
+        },
+        {
+          "name": "✏️ ATUALIZAR habilidade",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"habilidade\": \"JavaScript ES6+\",\n  \"nivel\": \"Especialista\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/habilidades/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "habilidades", "1"]
+            }
+          }
+        },
+        {
+          "name": "🗑️ DELETAR habilidade",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/habilidades/11",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "habilidades", "11"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🔗 TESTES DE RELACIONAMENTOS",
+      "item": [
+        {
+          "name": "🔗 Dados completos da Pessoa 1 com relacionamentos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/pessoas/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pessoas", "1"]
+            }
+          }
+        },
+        {
+          "name": "🔗 Experiências da Pessoa 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/experiencias/pessoa/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "experiencias", "pessoa", "1"]
+            }
+          }
+        },
+        {
+          "name": "🔗 Educação da Pessoa 2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/educacao/pessoa/2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "educacao", "pessoa", "2"]
+            }
+          }
+        },
+        {
+          "name": "🔗 Habilidades da Pessoa 2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/habilidades/pessoa/2",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "habilidades", "pessoa", "2"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
